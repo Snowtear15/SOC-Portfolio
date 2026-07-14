@@ -7,6 +7,8 @@ On Mar 27th, at 19:25, user Eddie Huffman received an email that was marked as p
 <br>
 On March 27th, at 19:56, a spike of several AD domain discovery related commands (whoami, net user, Get-ADUser) were detected running from a registered host 'DMZ-MSEXCHANGE-2013', host os 'Windows Server 2012 R2' by user 'SYSTEM'. Parent process of this activity was detected to be 'revshell.exe'. Given the grandparent process 'w2wp.exe' should never spawn a revshell or cmd shell access for any normal system activities, the machine is likely compromised and should be isolated. Escalating for further action.
 
-> A w2wp exe is a core microsoft engine that helps in all IIS services, i.e., it handles all incoming Http requests and helps run web applications in isolation. IIS generates a w2wp exe instance for each webapp seperately so if a specific website's code crashes or freezes, it does not affect other websites. It should never use shell prompts or cmd on the local system. Detection of it doing so is likely a malicious actor has used it to install malware on the system.
+<br>
+> A w2wp exe is a core microsoft engine that helps in all IIS services, i.e., it handles all incoming Http requests and helps run web applications in isolation. IIS generates a w2wp exe instance for each webapp seperately so if a specific website's code crashes or freezes, it does not affect other websites. It should never use shell prompts or cmd on the local system. Detection of it doing so is likely a malicious actor has used it to install malware on the system. 
 
 
+<br>
