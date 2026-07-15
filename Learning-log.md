@@ -1,9 +1,10 @@
 ***
 
 <br>
-## 2026-07-16 — THM: SOC Similation : Splunk
+## 2026-07-16 — THM: SOC Simulation : Splunk
 
 
+<br>
 <br>
 <br>
 ***
