@@ -4,15 +4,23 @@
 ## 2026-07-16 — THM: SOC Simulation : Splunk
 
 
-**Time of activity:** Email delivered 07/15/2026 21:26:08; user clicked malicious URL 21:27:17 (firewall: allowed).
-
-**Affected entities:** User c.allen ([c.allen@thetrydaily.thm](mailto:c.allen@thetrydaily.thm)); endpoint 10.20.2.25.
-**TP rationale:** Inbound email impersonates Microsoft via typosquatted domain (m1crosoftsupport.co) with urgency pretext and credential-harvesting link. Classic phishing indicators; classified True Positive.
-**Escalation rationale:** Firewall logs confirm endpoint 10.20.2.25 connected to hxxps://m1crosoftsupport[.]co/login (45.148.10.131) one minute after delivery, action **allowed** — high likelihood of credential submission and account compromise.
-**Remediation:** Force password reset and revoke sessions for c.allen; block domain, URL, and IP at proxy/firewall; purge email from all mailboxes; search mail logs for additional recipients from sender/domain; AV/EDR scan endpoint 10.20.2.25.
-**IOCs:** m1crosoftsupport[.]co · hxxps://m1crosoftsupport[.]co/login · 45.148.10.131 · [no-reply@m1crosoftsupport.co](mailto:no-reply@m1crosoftsupport.co)
+**Time of activity:** Email Delivered 07/15/2026 21:26:08.853; User clicked malicious URL 07/15/2026 21:27:17.853
 
 <br>
+**List of Affected Entities:** user c.allen [c.allen@thetrydaily.thm], endpoint 10.20.2.25
+
+<br>
+**Reason for Classifying as True Positive:** Email impersonating microsoft by using typosquated email address [m1crosoftsupport.co] and linking mailicious credential harvesting links. Classic email phishing:: classified True Positive.
+
+<br>
+**Reason for Escalating the Alert:** firewall logs confirmed endpoint 10.20.2.25 accessing https://m1crosoftsupport.co/login, **Action**: allowed. High likelyhood of credential submission and account compromise.
+
+<br>
+**Recommended Remediation Actions:** Force password reset and session revoke for c.allen; block reported domain, ip address, email address and url at firewall. Purge mail form all inboxes; search mail logs for additional recipients of sender/domain. AV/EDR scan endpoint 10.20.2.25.
+
+<br>
+**List of Attack Indicators:** domain \[m1crosoftsupport\[\.\]co\]\, ip address \[45\.148\.10\.131\] \[102\.89\.222\.143\]\, url \[https://m1crosoftsupport\[\.\]co/login\]\, email address \[no\-reply@m1crosoftsupport\[\.\]co\]
+
 ***
 
 ## 2026-07-15 — THM: [SOC L1 Alert Reporting]
