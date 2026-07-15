@@ -4,8 +4,14 @@
 ## 2026-07-16 — THM: SOC Simulation : Splunk
 
 
-<br>
-<br>
+**Time of activity:** Email delivered 07/15/2026 21:26:08; user clicked malicious URL 21:27:17 (firewall: allowed).
+
+**Affected entities:** User c.allen ([c.allen@thetrydaily.thm](mailto:c.allen@thetrydaily.thm)); endpoint 10.20.2.25.
+**TP rationale:** Inbound email impersonates Microsoft via typosquatted domain (m1crosoftsupport.co) with urgency pretext and credential-harvesting link. Classic phishing indicators; classified True Positive.
+**Escalation rationale:** Firewall logs confirm endpoint 10.20.2.25 connected to hxxps://m1crosoftsupport[.]co/login (45.148.10.131) one minute after delivery, action **allowed** — high likelihood of credential submission and account compromise.
+**Remediation:** Force password reset and revoke sessions for c.allen; block domain, URL, and IP at proxy/firewall; purge email from all mailboxes; search mail logs for additional recipients from sender/domain; AV/EDR scan endpoint 10.20.2.25.
+**IOCs:** m1crosoftsupport[.]co · hxxps://m1crosoftsupport[.]co/login · 45.148.10.131 · [no-reply@m1crosoftsupport.co](mailto:no-reply@m1crosoftsupport.co)
+
 <br>
 ***
 
